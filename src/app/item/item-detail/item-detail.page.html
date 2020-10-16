@@ -1,0 +1,116 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/item"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Item Detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="center">
+        <ion-img style="width: 300px; height: 300px;" [src]="loadedItem.imgUrl"></ion-img>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="center">
+        <h1>{{ loadedItem.model }}</h1>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <hr style="height:2px; background-color: #f398a4;">
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item> <b>Harga: &nbsp;</b> {{ loadedItem.harga | currency:'Rp. ':'symbol':'3.0' }} </ion-item>
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <ion-item> <b>Vendor: &nbsp;</b> {{ loadedItem.merk }} </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item> <b>Stock: &nbsp;</b> {{ loadedItem.stock | number }} </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+        </ion-list>
+
+        <ion-list *ngIf="url === 'proc'">
+          <ion-item>
+            <ion-text><h4>Tentang Produk</h4></ion-text>
+          </ion-item>
+
+          <ion-list>
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <ion-item> Base Clock: &emsp;{{ loadedItem.baseClock }} </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item> Boost Clock: &emsp;{{ loadedItem.boostClock }} </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-list>
+
+          <ion-list>
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <ion-item> Core Total: &emsp;{{ loadedItem.coreTotal }} </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item> Thread Total: &emsp;{{ loadedItem.threadTotal }} </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-list>     
+        </ion-list>
+
+        <ion-list *ngIf="url === 'ram'">
+          <ion-item>
+            <ion-text><h4>Tentang Produk</h4></ion-text>
+          </ion-item>
+
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <ion-item> <b>Speed:</b> &nbsp; {{ loadedItem.speed }} Mhz</ion-item>
+              </ion-col>
+              <ion-col>
+                <ion-item><b>Size:</b> &nbsp; <p style="font-size: small;">{{ loadedItem.size }}</p> </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-list>
+
+        <ion-list *ngIf="url === 'mobo'">
+          <ion-item>
+            <ion-text><h4>Tentang Produk</h4></ion-text>
+          </ion-item>
+
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <ion-item> <b>Chipset: &nbsp;</b> {{ loadedItem.chipset }} </ion-item>
+              </ion-col>
+              <ion-col>
+                <ion-item> <b>Type:</b> &nbsp; {{ loadedItem.procType }} </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-list>
+
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>

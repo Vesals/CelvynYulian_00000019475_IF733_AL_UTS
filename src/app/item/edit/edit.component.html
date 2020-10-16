@@ -1,0 +1,127 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>New Item</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="onCancel()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="form" (ngSubmit)="onSubmit(form)">
+
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">URL Foto</ion-label>
+        <ion-input type="textarea" formControlName="imgUrl" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Model</ion-label>
+        <ion-input type="text" formControlName="model" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Merk</ion-label>
+        <ion-input type="text" formControlName="merk" required></ion-input> 
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Harga</ion-label>
+        <ion-label position="stacked">Rp</ion-label>
+        <ion-input type="number" formControlName="harga" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Stock</ion-label>
+        <ion-input type="number" formControlName="stock" required></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="event != '' && event != 'gpu'">
+        <ion-label>Detail Produk</ion-label>
+      </ion-item>
+
+      <ion-grid *ngIf="event == 'proc'">
+        <ion-row>
+
+          <ion-col size="6">
+            <ion-item>
+              <ion-label position="stacked">Base Clock</ion-label>
+              <ion-input type="number" formControlName="baseClock" required></ion-input>
+            </ion-item>
+          </ion-col>
+
+          <ion-col size="6">
+            <ion-item>
+              <ion-label position="stacked">Boost Clock</ion-label>
+              <ion-input type="number" formControlName="boostClock" required></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+
+          <ion-col size="6">
+            <ion-item>
+              <ion-label position="stacked">Core Count </ion-label>
+              <ion-input type="number" formControlName="coreTotal" required></ion-input>
+            </ion-item>
+          </ion-col>
+
+          <ion-col size="6">
+            <ion-item>
+              <ion-label position="stacked">Thread Count</ion-label>
+              <ion-input type="number" formControlName="threadTotal" required></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      
+      <ion-grid *ngIf="event == 'ram'">
+        <ion-row>
+          <ion-col size="6">
+            <ion-item>
+              <ion-label position="stacked">Speed</ion-label>
+              <ion-input type="number" formControlName="speed" required></ion-input>
+            </ion-item>
+          </ion-col>
+
+          <ion-col size="6">
+            <ion-item>
+              <ion-label position="stacked">Size</ion-label>
+              <ion-input type="text" formControlName="size" required></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-grid *ngIf="event == 'mobo'">
+        <ion-row>
+          <ion-col size="6">
+            <ion-item>
+              <ion-label position="stacked">Chipset</ion-label>
+              <ion-input type="text" formControlName="chipset" required></ion-input>
+            </ion-item>
+          </ion-col>
+
+          <ion-col size="6">
+            <ion-item>
+              <ion-label position="stacked">Vendor</ion-label>
+              <ion-input type="text" formControlName="procType" required></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </ion-list>
+    
+    <ion-button
+      expand="full"
+      color="primary"
+      (click)="onSave()"
+      type="submit"
+      >Save</ion-button>
+  </form>
+
+</ion-content>
