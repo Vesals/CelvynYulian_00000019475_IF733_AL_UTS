@@ -125,21 +125,29 @@
     <ion-row *ngIf="eventS === 'proc'">
       <ion-col size="6" size-sm="4" *ngFor="let proc of proc; index as i">
         <ion-item>
-          <ion-card [routerLink]="['./proc/', proc.id]" style="width: 400px;">
-            <ion-card-header class="center">
-                <ion-img class="gridImg" [src]="proc.imgUrl"></ion-img>
-            </ion-card-header>
-            <ion-card-content>
-              <ion-label> 
-                <ion-text>
-                  <h2 *ngIf="proc.model.length > 36"> <b>{{ proc.model | slice:0:36 }}...</b>  </h2>
-                  <h2 *ngIf="proc.model.length <= 36"> <b>{{ proc.model }}</b>  </h2>
-                  <p> {{ proc.harga | currency:'Rp. ':'symbol':'3.0' }} </p>
-                  <p> Stock : {{ proc.stock | number }} </p>
-                </ion-text>
-              </ion-label>
-            </ion-card-content>
-          </ion-card>
+          <ion-grid>
+            <ion-row>
+              <ion-col></ion-col>
+              <ion-col>
+                <ion-card [routerLink]="['./proc/', proc.id]" style="width: 400px;">
+                  <ion-card-header class="center">
+                      <ion-img class="gridImg" [src]="proc.imgUrl"></ion-img>
+                  </ion-card-header>
+                  <ion-card-content>
+                    <ion-label> 
+                      <ion-text>
+                        <h2 *ngIf="proc.model.length > 36"> <b>{{ proc.model | slice:0:36 }}...</b>  </h2>
+                        <h2 *ngIf="proc.model.length <= 36"> <b>{{ proc.model }}</b>  </h2>
+                        <p> {{ proc.harga | currency:'Rp. ':'symbol':'3.0' }} </p>
+                        <p> Stock : {{ proc.stock | number }} </p>
+                      </ion-text>
+                    </ion-label>
+                  </ion-card-content>
+                </ion-card>
+              </ion-col>
+              <ion-col></ion-col>
+            </ion-row>
+          </ion-grid>
         </ion-item>
       </ion-col>
 
@@ -154,21 +162,29 @@
     <ion-row *ngIf="eventS === 'ram'">
       <ion-col size="6" size-sm="4" *ngFor="let ram of ram; index as i">
         <ion-item>
-          <ion-card [routerLink]="['./ram/', ram.id]" style="width: 400px;">
-            <ion-card-header class="center">
-                <ion-img class="gridImg" [src]="ram.imgUrl"></ion-img>
-            </ion-card-header>
-            <ion-card-content>
-              <ion-label> 
-                <ion-text>
-                  <h2 *ngIf="ram.model.length > 36"> <b>{{ ram.model | slice:0:36 }}...</b>  </h2>
-                  <h2 *ngIf="ram.model.length <= 36"> <b>{{ ram.model }}</b>  </h2>
-                  <p> {{ ram.harga | currency:'Rp. ':'symbol':'3.0' }} </p>
-                  <p> Stock : {{ ram.stock | number }} </p>
-                </ion-text>
-              </ion-label>
-            </ion-card-content>
-          </ion-card>
+          <ion-grid>
+            <ion-row>
+              <ion-col></ion-col>
+              <ion-col>
+                <ion-card [routerLink]="['./ram/', ram.id]" style="width: 400px;">
+                  <ion-card-header class="center">
+                      <ion-img class="gridImg" [src]="ram.imgUrl"></ion-img>
+                  </ion-card-header>
+                  <ion-card-content>
+                    <ion-label> 
+                      <ion-text>
+                        <h2 *ngIf="ram.model.length > 36"> <b>{{ ram.model | slice:0:36 }}...</b>  </h2>
+                        <h2 *ngIf="ram.model.length <= 36"> <b>{{ ram.model }}</b>  </h2>
+                        <p> {{ ram.harga | currency:'Rp. ':'symbol':'3.0' }} </p>
+                        <p> Stock : {{ ram.stock | number }} </p>
+                      </ion-text>
+                    </ion-label>
+                  </ion-card-content>
+                </ion-card>
+              </ion-col>
+              <ion-col></ion-col>
+            </ion-row>
+          </ion-grid>
         </ion-item>
       </ion-col>
 
@@ -182,21 +198,29 @@
     <ion-row *ngIf="eventS === 'mobo'">
       <ion-col size="6" size-sm="4" *ngFor="let mobo of mobo; index as i">
         <ion-item>
-          <ion-card [routerLink]="['./mobo/', mobo.id]" style="width: 400px;">
-            <ion-card-header class="center">
-                <ion-img class="gridImg" [src]="mobo.imgUrl"></ion-img>
-            </ion-card-header>
-            <ion-card-content>
-              <ion-label> 
-                <ion-text>
-                  <h2 *ngIf="mobo.model.length > 36"> <b>{{ mobo.model | slice:0:36 }}...</b>  </h2>
-                  <h2 *ngIf="mobo.model.length <= 36"> <b>{{ mobo.model }}</b>  </h2>
-                  <p> {{ mobo.harga | currency:'Rp. ':'symbol':'3.0' }} </p>
-                  <p> Stock : {{ mobo.stock | number }} </p>
-                </ion-text>
-              </ion-label>
-            </ion-card-content>
-          </ion-card>
+          <ion-grid>
+            <ion-row>
+              <ion-col></ion-col>
+              <ion-col>
+                <ion-card [routerLink]="['./mobo/', mobo.id]" style="width: 400px;">
+                  <ion-card-header class="center">
+                      <ion-img class="gridImg" [src]="mobo.imgUrl"></ion-img>
+                  </ion-card-header>
+                  <ion-card-content>
+                    <ion-label> 
+                      <ion-text>
+                        <h2 *ngIf="mobo.model.length > 36"> <b>{{ mobo.model | slice:0:36 }}...</b>  </h2>
+                        <h2 *ngIf="mobo.model.length <= 36"> <b>{{ mobo.model }}</b>  </h2>
+                        <p> {{ mobo.harga | currency:'Rp. ':'symbol':'3.0' }} </p>
+                        <p> Stock : {{ mobo.stock | number }} </p>
+                      </ion-text>
+                    </ion-label>
+                  </ion-card-content>
+                </ion-card>
+              </ion-col>
+              <ion-col></ion-col>
+            </ion-row>
+          </ion-grid>
         </ion-item>
       </ion-col>
 
@@ -211,21 +235,29 @@
     <ion-row *ngIf="eventS === 'gpu'">
       <ion-col size="6" size-sm="4" *ngFor="let gpu of gpu; index as i">
         <ion-item>
-          <ion-card [routerLink]="['./gpu/', gpu.id]" style="width: 400px;">
-            <ion-card-header class="center">
-                <ion-img class="gridImg" [src]="gpu.imgUrl"></ion-img>
-            </ion-card-header>
-            <ion-card-content>
-              <ion-label> 
-                <ion-text>
-                  <h2 *ngIf="gpu.model.length > 36"> <b>{{ gpu.model | slice:0:36 }}...</b>  </h2>
-                  <h2 *ngIf="gpu.model.length <= 36"> <b>{{ gpu.model }}</b>  </h2>
-                  <p> {{ gpu.harga | currency:'Rp. ':'symbol':'3.0' }} </p>
-                  <p> Stock : {{ gpu.stock | number }} </p>
-                </ion-text>
-              </ion-label>
-            </ion-card-content>
-          </ion-card>
+          <ion-grid>
+            <ion-row>
+              <ion-col></ion-col>
+              <ion-col>
+                <ion-card [routerLink]="['./gpu/', gpu.id]" style="width: 400px;">
+                  <ion-card-header class="center">
+                      <ion-img class="gridImg" [src]="gpu.imgUrl"></ion-img>
+                  </ion-card-header>
+                  <ion-card-content>
+                    <ion-label> 
+                      <ion-text>
+                        <h2 *ngIf="gpu.model.length > 36"> <b>{{ gpu.model | slice:0:36 }}...</b>  </h2>
+                        <h2 *ngIf="gpu.model.length <= 36"> <b>{{ gpu.model }}</b>  </h2>
+                        <p> {{ gpu.harga | currency:'Rp. ':'symbol':'3.0' }} </p>
+                        <p> Stock : {{ gpu.stock | number }} </p>
+                      </ion-text>
+                    </ion-label>
+                  </ion-card-content>
+                </ion-card>
+              </ion-col>
+              <ion-col></ion-col>
+            </ion-row>
+          </ion-grid>
         </ion-item>
       </ion-col>
       
